@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumibricks 抖音脚本批量生成器</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🎬 Lumibricks 抖音脚本批量生成器</h1>
+      <p>为积木/益智玩具品牌快速产出高完播率短视频脚本（15-60秒）。</p>
+    </header>
+
+    <section class="panel form-panel">
+      <h2>1) 填写创作参数</h2>
+      <div class="grid">
+        <label>品牌
+          <input id="brand" type="text" value="Lumibricks" />
+        </label>
+        <label>目标受众
+          <input id="audience" type="text" value="25-35岁年轻父母、积木爱好者、益智玩具消费者" />
+        </label>
+        <label>核心卖点
+          <input id="sellingPoints" type="text" value="创意拼搭、益智启蒙、高颜值设计、亲子互动" />
+        </label>
+        <label>主题（可多项，逗号分隔）
+          <input id="themes" type="text" value="亲子互动, 创意拼搭教程, 开箱测评, 挑战剧情, STEM科普" />
+        </label>
+        <label>脚本数量
+          <select id="count">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+          </select>
+        </label>
+        <label>视频时长范围（秒）
+          <select id="duration">
+            <option value="15-30">15-30</option>
+            <option value="25-45" selected>25-45</option>
+            <option value="35-60">35-60</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="direction-group">
+        <h3>内容方向（至少选1项）</h3>
+        <label><input type="checkbox" class="direction" value="亲子互动场景" checked /> 亲子互动场景</label>
+        <label><input type="checkbox" class="direction" value="创意拼搭教程" checked /> 创意拼搭教程</label>
+        <label><input type="checkbox" class="direction" value="开箱测评" checked /> 开箱测评</label>
+        <label><input type="checkbox" class="direction" value="挑战/变装/剧情类" checked /> 挑战/变装/剧情类</label>
+        <label><input type="checkbox" class="direction" value="知识科普（STEM）" checked /> 知识科普（STEM）</label>
+      </div>
+
+      <div class="actions">
+        <button id="generateBtn">⚡ 批量生成脚本</button>
+        <button id="copyBtn" class="secondary">📋 复制全部</button>
+        <button id="downloadBtn" class="secondary">⬇️ 下载 Markdown</button>
+      </div>
+    </section>
+
+    <section class="panel output-panel">
+      <h2>2) 生成结果</h2>
+      <p class="tip">提示：可直接复制到飞书/Notion，或作为AI二次优化底稿。</p>
+      <textarea id="output" rows="30" placeholder="点击“批量生成脚本”开始..."></textarea>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
